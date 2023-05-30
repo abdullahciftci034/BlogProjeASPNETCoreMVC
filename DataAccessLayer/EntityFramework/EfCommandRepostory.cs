@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfCommandRepostory : GenericRepostory<Category>, ICommandDal
+    public class EfCommandRepostory : GenericRepostory<Command>, ICommandDal
     {
     }
 }

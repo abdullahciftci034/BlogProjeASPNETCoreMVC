@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfBlogRepostory : GenericRepostory<Blog>, IBlogDal
-    {
-    }
+	public class EfBlogRepostory : GenericRepostory<Blog>, IBlogDal
+	{
+		public List<Blog> GetAllBlogs()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
