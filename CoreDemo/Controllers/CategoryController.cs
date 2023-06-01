@@ -12,5 +12,6 @@ namespace CoreDemo.Controllers
             var values = categoryManager.GetAllCategories();
             return View(values);  
         }
+      
     }
 }

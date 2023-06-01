@@ -1,6 +1,6 @@
-﻿
-@{
-    ViewData["Title"] = "UserLayout";
+﻿@{
+	ViewData["Title"] = "UserLayout";
+	Layout = null;
 }
 <!DOCTYPE html>
 <html lang="zxx">
@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-
+	
 	<header>
 		<div class="top-bar_sub_w3layouts container-fluid">
 			<div class="row">
@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a class="navbar-brand" href="index.html">
 						<i class="fab fa-linode"></i> Weblog</a>
 				</div>
-				@await Html.PartialAsync("Partial2")
+				@await Html.PartialAsync("UserLoginLayout")
 				<div class="col-md-4 log-icons text-right">
 
 					<ul class="social_list1 mt-3">
@@ -71,28 +71,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		
-		@await Html.PartialAsync("Partial1")
+		@await Html.PartialAsync("NavBarLayout")
 	</header>
-	<!--//header-->
-	<!--/banner-->
-	<div class="banner-inner">
-	</div>
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
-		</li>
-		<li class="breadcrumb-item active">Blog3</li>
-	</ol>
-	<!--//banner-->
 
-	<!--/main-->
-	<!--//main-->
-	<!--footer-->
-
-	@await Html.PartialAsync("BlogView")
+	@RenderBody()
 
 
-	@await Html.PartialAsync("Partial3")
+	@await Html.PartialAsync("FooterLayout")
 	
 
 	<!-- js -->
@@ -137,7 +122,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //Custom-JavaScript-File-Links -->
 	<script src="~/web/js/bootstrap.js"></script>
 
-	@RenderBody()
+	
 </body>
 </html>
+
 

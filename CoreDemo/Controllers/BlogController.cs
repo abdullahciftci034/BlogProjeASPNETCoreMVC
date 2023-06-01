@@ -1,16 +1,28 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace CoreDemo.Controllers
 {
     public class BlogController : Controller
     {
-        BlogManager blogManager = new BlogManager(new EfBlogRepostory());
-        public IActionResult Index()
+		IBlogService blogManager = new BlogManager(new EfBlogRepostory());
+		
+		public IActionResult Index()
         {
-            var values = blogManager.GetAllBlogs();
+            var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
+        public IActionResult BlogDetails(int id)
+        {
+            ViewBag.id = id;
+			var values = this.blogManager.GetAllBlog(id);
+
+			return View(values);
+        }
+
     }
 }

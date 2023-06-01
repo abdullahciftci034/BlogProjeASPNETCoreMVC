@@ -3,6 +3,7 @@ using DataAccessLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +25,12 @@ namespace DataAccessLayer.Repostory
               
         }
 
-        public T GetByID(int id)
+		public List<T> GetAllList(Expression<Func<T, bool>> filter)
+		{
+			return this.context.Set<T>().Where(filter).ToList(); 
+		}
+
+		public T GetByID(int id)
         {
             return context.Set<T>().Find(id);
         }

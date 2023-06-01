@@ -33,15 +33,21 @@ namespace BusinessLayer.Concrete
 		{
 			throw new NotImplementedException();
 		}
-
-		public List<Blog> GetAllBlogs()
-		{
-			return this.iBlogDal.GetAllList();
-		}
-
 		public Blog GetBlogById(int Id)
 		{
 			throw new NotImplementedException();
+		}
+		public List<Blog> GetAllBlog()
+		{
+			return this.iBlogDal.GetAllList();
+		}
+		public List<Blog> GetAllBlog(int id)
+		{
+			return iBlogDal.GetAllList(x => x.BlogId == id);
+		}
+		public List<Blog> GetBlogListWithCategory()
+		{
+			return iBlogDal.GetListWithCategory();
 		}
 	}
 }

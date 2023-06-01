@@ -1,0 +1,13 @@
+﻿@using EntityLayer.Concrete
+
+@model List<Writer>
+
+@foreach(var item in Model){
+    <p>
+        @item.WriterName
+    </p>
+    <p>
+        @item.WriterId
+    </p>
+    <br />
+}

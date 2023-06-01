@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class ContactRepostory : IContactDal
+    public class ContactRepostory : GenericRepostory<Contact>, IContactDal
     {
         public void Delete(Contact value)
         {

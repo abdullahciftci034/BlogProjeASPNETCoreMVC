@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repostory;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,14 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfBlogRepostory : GenericRepostory<Blog>, IBlogDal
 	{
-		public List<Blog> GetAllBlogs()
+		public List<Blog> GetListWithCategory()
 		{
-			throw new NotImplementedException();
+			using (var context = new Context())
+			{
+				return context.blogs.Include(x=> x.Category).ToList();
+
+			}
+
 		}
 	}
 }

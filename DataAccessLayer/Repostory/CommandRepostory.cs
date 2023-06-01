@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class CommandRepostory : ICommandDal
+    public class CommandRepostory : GenericRepostory<Command>, ICommandDal
     {
         public void Delete(Command value)
         {

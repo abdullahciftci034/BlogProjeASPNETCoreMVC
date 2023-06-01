@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class WriterRepostory : IWriterDal
+    public class WriterRepostory : GenericRepostory<Writer>, IWriterDal
     {
         public void Delete(Writer value)
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class CategoryRepostory : ICategoryDal
+    public class CategoryRepostory : GenericRepostory<Category>, ICategoryDal
     {
         public void Delete(Category value)
         {

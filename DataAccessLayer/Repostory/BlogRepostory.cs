@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class BlogRepostory : IBlogDal
+    public class BlogRepostory : GenericRepostory<Blog>, IBlogDal
     {
         public void Delete(Blog value)
         {
@@ -25,7 +25,12 @@ namespace DataAccessLayer.Repostory
             throw new NotImplementedException();
         }
 
-        public void Insert(Blog value)
+		public List<Blog> GetListWithCategory()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Insert(Blog value)
         {
             throw new NotImplementedException();
         }
