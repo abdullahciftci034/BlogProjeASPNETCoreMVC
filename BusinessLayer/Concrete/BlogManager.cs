@@ -49,5 +49,11 @@ namespace BusinessLayer.Concrete
 		{
 			return iBlogDal.GetListWithCategory();
 		}
+
+		public List<Blog> GetBlogListByWriter(int id)
+		{
+			Console.WriteLine("managera girdi");
+			return iBlogDal.GetAllList(x=>x.WriterId == id);
+		}
 	}
 }

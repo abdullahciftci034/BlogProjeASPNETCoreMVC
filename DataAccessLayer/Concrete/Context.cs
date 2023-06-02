@@ -18,7 +18,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<About> abouts { get; set; }
         public DbSet<Blog> blogs { get; set; }
         public DbSet<Category> categories { get; set; }
-        public DbSet<Command> commands { get; set; }    
+        public DbSet<Commend> commends { get; set; }    
         public DbSet<Contact> contacts { get; set; }    
         public DbSet<Writer> writers { get; set; }  
     }

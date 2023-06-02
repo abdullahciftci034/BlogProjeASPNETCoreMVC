@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230528184155_mig1")]
-    partial class mig1
+    [Migration("20230602133208_mig5")]
+    partial class mig5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -76,7 +76,17 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("BlogTitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WriterId")
+                        .HasColumnType("int");
+
                     b.HasKey("BlogId");
+
+                    b.HasIndex("CategoryID");
+
+                    b.HasIndex("WriterId");
 
                     b.ToTable("blogs");
                 });
@@ -102,31 +112,36 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("categories");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Command", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Commend", b =>
                 {
-                    b.Property<int>("CommandID")
+                    b.Property<int>("CommendID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CommandContent")
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CommendContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("CommandStatus")
+                    b.Property<bool>("CommendStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("CommandTitler")
+                    b.Property<string>("CommendTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CommandUserName")
+                    b.Property<string>("CommendUserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("CommandID");
+                    b.HasKey("CommendID");
 
-                    b.ToTable("commands");
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("commends");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -181,12 +196,57 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("WriterPassword")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WriterStatus")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("WriterStatus")
+                        .HasColumnType("bit");
 
                     b.HasKey("WriterId");
 
                     b.ToTable("writers");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Category", "Category")
+                        .WithMany("Blogs")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.Writer", "Writer")
+                        .WithMany("Blogs")
+                        .HasForeignKey("WriterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Writer");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Commend", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Blog", "Blog")
+                        .WithMany("Commands")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
+                {
+                    b.Navigation("Commands");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
+                {
+                    b.Navigation("Blogs");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }

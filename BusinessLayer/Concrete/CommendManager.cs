@@ -9,41 +9,41 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-	public class CommandManager : ICommandService
+	public class CommendManager : ICommendService
 	{
-		public ICommandDal commandDal;
+		public ICommendDal commandDal;
 
-		public CommandManager(ICommandDal commandDal)
+		public CommendManager(ICommendDal commandDal)
 		{
 			this.commandDal = commandDal;
 		}
 
-		public void CategoryDelete(Command command)
+		public void CategoryDelete(Commend command)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void CategoryUpdate(Command command)
+		public void CategoryUpdate(Commend command)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void CommandAdd(Command command)
+		public void CommandAdd(Commend command)
 		{
 			throw new NotImplementedException();
 		}
 
-		public List<Command> GetAllCommands(int id)
+		public List<Commend> GetAllCommands(int id)
 		{
 			return commandDal.GetAllList(x => x.BlogId == id);
 		}
 
-		public List<Command> GetAllCommands()
+		public List<Commend> GetAllCommands()
 		{
 			throw new NotImplementedException();
 		}
 
-		public Command GetCommandById(int Id)
+		public Commend GetCommandById(int Id)
 		{
 			throw new NotImplementedException();
 		}

@@ -77,9 +77,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
+                    b.Property<int>("WriterId")
+                        .HasColumnType("int");
+
                     b.HasKey("BlogId");
 
                     b.HasIndex("CategoryID");
+
+                    b.HasIndex("WriterId");
 
                     b.ToTable("blogs");
                 });
@@ -105,9 +110,9 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("categories");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Command", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Commend", b =>
                 {
-                    b.Property<int>("CommandID")
+                    b.Property<int>("CommendID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -115,26 +120,26 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CommandContent")
+                    b.Property<string>("CommendContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("CommandStatus")
+                    b.Property<bool>("CommendStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("CommandTitler")
+                    b.Property<string>("CommendTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CommandUserName")
+                    b.Property<string>("CommendUserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("CommandID");
+                    b.HasKey("CommendID");
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("commands");
+                    b.ToTable("commends");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -189,8 +194,8 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("WriterPassword")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WriterStatus")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("WriterStatus")
+                        .HasColumnType("bit");
 
                     b.HasKey("WriterId");
 
@@ -205,10 +210,18 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EntityLayer.Concrete.Writer", "Writer")
+                        .WithMany("Blogs")
+                        .HasForeignKey("WriterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Writer");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Command", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Commend", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Blog", "Blog")
                         .WithMany("Commands")
@@ -225,6 +238,11 @@ namespace DataAccessLayer.Migrations
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
+                {
+                    b.Navigation("Blogs");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
                 {
                     b.Navigation("Blogs");
                 });

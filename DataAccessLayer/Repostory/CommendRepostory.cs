@@ -9,29 +9,29 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repostory
 {
-    public class CommandRepostory : GenericRepostory<Command>, ICommandDal
+    public class CommendRepostory : GenericRepostory<Commend>, ICommendDal
     {
-        public void Delete(Command value)
+        public void Delete(Commend value)
         {
             throw new NotImplementedException();
         }
 
-        public List<Command> GetAllList()
+        public List<Commend> GetAllList()
         {
             throw new NotImplementedException();
         }
 
-        public Command GetByID(int id)
+        public Commend GetByID(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Command value)
+        public void Insert(Commend value)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Command value)
+        public void Update(Commend value)
         {
             throw new NotImplementedException();
         }

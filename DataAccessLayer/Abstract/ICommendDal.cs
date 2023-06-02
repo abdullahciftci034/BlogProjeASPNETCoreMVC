@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICommandDal : IGenericDal<Command>
+    public interface ICommendDal : IGenericDal<Commend>
     {
     }
 }

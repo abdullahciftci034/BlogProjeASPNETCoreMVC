@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreDemo.Controllers
 {
-	public class CommandController : Controller
+	public class CommendController : Controller
 	{
-		public ICommandService commandService=new CommandManager(new EfCommandRepostory());
+		public ICommendService commandService=new CommendManager(new EfCommendRepostory());
 		public IActionResult Index()
 		{
 			return View();

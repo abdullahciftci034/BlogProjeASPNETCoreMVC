@@ -26,24 +26,6 @@ namespace DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "blogs",
-                columns: table => new
-                {
-                    BlogId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BlogTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogThumbnailImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogCreateDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BlogStatus = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_blogs", x => x.BlogId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "categories",
                 columns: table => new
                 {
@@ -57,24 +39,6 @@ namespace DataAccessLayer.Migrations
                 {
                     table.PrimaryKey("PK_categories", x => x.CategoryID);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "commands",
-                columns: table => new
-                {
-                    CommandID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CommandUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CommandTitler = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CommandContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CommentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CommandStatus = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_commands", x => x.CommandID);
-                });
-
 
             migrationBuilder.CreateTable(
                 name: "contacts",
@@ -105,24 +69,77 @@ namespace DataAccessLayer.Migrations
                     WriterImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WriterMail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WriterPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WriterStatus = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    WriterStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_writers", x => x.WriterId);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "blogs",
+                columns: table => new
+                {
+                    BlogId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BlogTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogThumbnailImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogCreateDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BlogStatus = table.Column<bool>(type: "bit", nullable: false),
+                    CategoryID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_blogs", x => x.BlogId);
+                    table.ForeignKey(
+                        name: "FK_blogs_categories_CategoryID",
+                        column: x => x.CategoryID,
+                        principalTable: "categories",
+                        principalColumn: "CategoryID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "commands",
+                columns: table => new
+                {
+                    CommandID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CommandUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CommandTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CommandContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CommentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CommandStatus = table.Column<bool>(type: "bit", nullable: false),
+                    BlogId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_commands", x => x.CommandID);
+                    table.ForeignKey(
+                        name: "FK_commands_blogs_BlogId",
+                        column: x => x.BlogId,
+                        principalTable: "blogs",
+                        principalColumn: "BlogId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_blogs_CategoryID",
+                table: "blogs",
+                column: "CategoryID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_commands_BlogId",
+                table: "commands",
+                column: "BlogId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "abouts");
-
-            migrationBuilder.DropTable(
-                name: "blogs");
-
-            migrationBuilder.DropTable(
-                name: "categories");
 
             migrationBuilder.DropTable(
                 name: "commands");
@@ -132,6 +149,12 @@ namespace DataAccessLayer.Migrations
 
             migrationBuilder.DropTable(
                 name: "writers");
+
+            migrationBuilder.DropTable(
+                name: "blogs");
+
+            migrationBuilder.DropTable(
+                name: "categories");
         }
     }
 }

@@ -19,10 +19,12 @@ namespace CoreDemo.Controllers
         public IActionResult BlogDetails(int id)
         {
             ViewBag.id = id;
-			var values = this.blogManager.GetAllBlog(id);
-
+            var values = this.blogManager.GetAllBlog(id);
+            foreach (var blog in values) {
+                ViewBag.WriterId = blog.WriterId;
+            }
 			return View(values);
         }
 
-    }
+	}
 }

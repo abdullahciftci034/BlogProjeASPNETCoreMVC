@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Command
+    public class Commend
     {
         [Key]
-        public int CommandID { get; set; }
-        public string CommandUserName { get; set; }
-        public string CommandTitler { get; set; }
-        public string CommandContent { get; set; }  
+        public int CommendID { get; set; }
+        public string CommendUserName { get; set; }
+        public string CommendTitle { get; set; }
+        public string CommendContent { get; set; }  
         public DateTime CommentDate { get; set; } 
-        public bool CommandStatus { get; set; }
+        public bool CommendStatus { get; set; }
         public int BlogId { get; set; } 
         public Blog Blog { get; set;}
 

@@ -9,9 +9,9 @@ namespace CoreDemo.ViewComponents.Comment
 {
 	public class CommentViewByBlog : ViewComponent
 	{
-		ICommandService commandService = new CommandManager(new EfCommandRepostory());
+		ICommendService commendService = new CommendManager(new EfCommendRepostory());
 		public IViewComponentResult Invoke(int id) {
-			var val =commandService.GetAllCommands(id);
+			var val =commendService.GetAllCommands(id);
 
 			return View(val);		
 		}	

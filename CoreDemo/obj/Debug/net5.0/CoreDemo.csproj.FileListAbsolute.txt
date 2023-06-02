@@ -161,7 +161,14 @@ D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\UserLoginLayout.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\FooterLayout.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\NavBarLayout.cshtml.g.cs
-D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Command\CommandListByBlog.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CommentViewByBlog\default.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CommentList\Default.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Command\CommendListByBlog.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\bin\Debug\net5.0\FluentValidation.dll
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\CoreDemo.MvcApplicationPartsAssemblyInfo.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListByWriter\Default.cshtml.g.cs
