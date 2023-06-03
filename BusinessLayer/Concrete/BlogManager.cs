@@ -5,55 +5,31 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-	public class BlogManager : IBlogService
+	public class BlogManager : GenericManager<Blog>, IBlogService
 	{
-		private IBlogDal iBlogDal;
-
-		public BlogManager(IBlogDal iBlogDal)
+		IBlogDal blogDal;
+		public BlogManager(IBlogDal blogDal):base(blogDal)
 		{
-			this.iBlogDal = iBlogDal;
-		}
-
-		public void BlogAdd(Blog blog)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void BlogDelete(Blog blog)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void BlogUpdate(Blog blog)
-		{
-			throw new NotImplementedException();
-		}
-		public Blog GetBlogById(int Id)
-		{
-			throw new NotImplementedException();
-		}
-		public List<Blog> GetAllBlog()
-		{
-			return this.iBlogDal.GetAllList();
+			this.blogDal = blogDal;
 		}
 		public List<Blog> GetAllBlog(int id)
 		{
-			return iBlogDal.GetAllList(x => x.BlogId == id);
+			return this.dataLayer.GetAllList(x => x.BlogId == id);
 		}
 		public List<Blog> GetBlogListWithCategory()
 		{
-			return iBlogDal.GetListWithCategory();
+			return this.blogDal.GetListWithCategory();
 		}
 
 		public List<Blog> GetBlogListByWriter(int id)
 		{
-			Console.WriteLine("managera girdi");
-			return iBlogDal.GetAllList(x=>x.WriterId == id);
+			return this.dataLayer.GetAllList(x=>x.WriterId == id);
 		}
 	}
 }

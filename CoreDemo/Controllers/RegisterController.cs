@@ -24,7 +24,7 @@ namespace CoreDemo.Controllers
 			if(validation.IsValid) {
 				writer.WriterStatus = true;
 				writer.WriterAbout = "Klass adam";
-				writerService.WriterUpdate(writer);
+				writerService.Update(writer);
 				return RedirectToAction("Index","Blog");
 			}
 			foreach(var item in validation.Errors)

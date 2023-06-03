@@ -9,38 +9,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-	public class WriterManager : IWriterService
+	public class WriterManager :GenericManager<Writer>, IWriterService
 	{
 		IWriterDal writerDal;
 
-		public WriterManager(IWriterDal writerDal)
+		public WriterManager(IWriterDal writerDal):base(writerDal)
 		{
 			this.writerDal = writerDal;
-		}
-
-		public List<Writer> GetAllWriters()
-		{
-			return this.writerDal.GetAllList();
-		}
-
-		public Writer GetWritersById(int Id)
-		{
-			return this.writerDal.GetByID(Id);	
-		}
-
-		public void WriterAdd(Writer Writer)
-		{
-			this.writerDal.Insert(Writer);
-		}
-
-		public void WriterDelete(Writer Writer)
-		{
-			this.writerDal.Delete(Writer);
-		}
-
-		public void WriterUpdate(Writer Writer)
-		{
-			this.writerDal.Update(Writer);	
 		}
 	}
 }

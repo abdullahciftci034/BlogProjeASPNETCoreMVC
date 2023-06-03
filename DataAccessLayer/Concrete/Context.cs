@@ -15,6 +15,7 @@ namespace DataAccessLayer.Concrete
             string sql_statment = "server=AbdullahPC\\SQLEXPRESS;database=CoreBlogDb;integrated security=true;";
             optionsBuilder.UseSqlServer(sql_statment);
         }
+        public DbSet<NewsLetter> newsLetters { get; set; }   
         public DbSet<About> abouts { get; set; }
         public DbSet<Blog> blogs { get; set; }
         public DbSet<Category> categories { get; set; }

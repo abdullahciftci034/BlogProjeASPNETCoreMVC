@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-	public interface ICommendService
+	public interface ICommendService : IGenericService<Commend>
 	{
-		void CommandAdd(Commend command);
-		void CategoryDelete(Commend command);
-		void CategoryUpdate(Commend command);
-		List<Commend> GetAllCommands();
 		List<Commend> GetAllCommands(int id);
-		Commend GetCommandById(int Id);
 	}
 }
