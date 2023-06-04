@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace CoreDemo.ViewComponents
+namespace CoreDemo.ViewComponents.Comment
 {
 	public class CommentList:ViewComponent
 	{

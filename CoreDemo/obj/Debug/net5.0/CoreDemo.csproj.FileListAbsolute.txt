@@ -174,3 +174,12 @@ D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListByWriter\Default.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\NewsLetter\SubscribeMail.cshtml.g.cs
 D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\ErrorPage\Error1.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\HeaderLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\ScriptLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\SocialMediaLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\SearchLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\NavBarHeaderLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\RecentlyPost\Default.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\FooterSocialLayout.cshtml.g.cs
+D:\Documents\WorkFolder\C#_Work\NewWoorkFolder\Ders2\CoreDemo\CoreDemo\obj\Debug\net5.0\Razor\Views\Contact\index.cshtml.g.cs

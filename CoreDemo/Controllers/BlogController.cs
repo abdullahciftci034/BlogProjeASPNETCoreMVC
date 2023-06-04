@@ -1,9 +1,11 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace CoreDemo.Controllers
 {
@@ -20,11 +22,10 @@ namespace CoreDemo.Controllers
         {
             ViewBag.id = id;
             var values = this.blogManager.GetAllBlog(id);
-            foreach (var blog in values) {
+			foreach (var blog in values) {
                 ViewBag.WriterId = blog.WriterId;
             }
-			return View(values);
+            return View(values);
         }
-
 	}
 }

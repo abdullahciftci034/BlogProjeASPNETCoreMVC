@@ -9,13 +9,14 @@ using System.Collections.Generic;
 
 namespace CoreDemo.ViewComponents.Blog
 {
-	public class BlogListByWriter : ViewComponent
-	{
-		public IBlogService blogService= new BlogManager(new EfBlogRepostory());
-		public IViewComponentResult Invoke(int id)
-		{
-			var val = blogService.GetBlogListByWriter(id);
-			return View(val);
-		}
-	}
+    public class BlogListByWriter : ViewComponent
+    {
+        public IBlogService blogService = new BlogManager(new EfBlogRepostory());
+        public IViewComponentResult Invoke(int id)
+        {
+            Console.WriteLine("yazdir");
+            var val = blogService.GetBlogListByWriter(id);
+            return View(val);
+        }
+    }
 }

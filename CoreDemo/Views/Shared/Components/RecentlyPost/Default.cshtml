@@ -1,0 +1,29 @@
+﻿@{
+	ViewData["Title"] = "RecentlyPost";
+}
+@using EntityLayer.Concrete
+@model List<Blog>
+<div class="tech-btm">
+	<h3>Latest Posts</h3>
+	@foreach (var val in Model)
+	{
+		<div class="blog-grids row mb-3">
+			<div class="col-md-5 blog-grid-left">
+				<a href="/Blog/BlogDetails/@val.BlogId">
+					<img src="@val.BlogThumbnailImage" class="card-img-top img-fluid" alt="">
+				</a>
+			</div>
+			<div class="col-md-7 blog-grid-right">
+
+				<h5>
+					<a href="/Blog/BlogDetails/@val.BlogId">@val.BlogTitle</a>
+				</h5>
+				<div class="sub-meta">
+					<span>
+						<i class="far fa-clock"></i>@val.BlogCreateDate
+					</span>
+				</div>
+			</div>
+		</div>
+	}
+</div>

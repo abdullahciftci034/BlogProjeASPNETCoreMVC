@@ -6,10 +6,8 @@
 
 @using EntityLayer.Concrete
 @model List<Blog>
-<section class="main-content-w3layouts-agileits">
-	<div class="container">
-		<h3 class="tittle">Blog Posts</h3>
-		<div class="inner-sec">
+<h3 class="tittle">Blog Posts</h3>
+<div class="inner-sec">
 			<!--left-->
 			<div class="left-blog-info-w3layouts-agileits text-left">
 				<div class="row">
@@ -17,7 +15,7 @@
 					{
 
 						<div class="col-lg-4 card">
-							<a href="single.html">
+							<a href="/Blog/blogDetails/@item.BlogId">
 								<img src="@item.BlogThumbnailImage" class="card-img-top img-fluid" width="100" height="100">
 							</a>
 							<div class="card-body">
@@ -68,6 +66,4 @@
 				<!--//left-->
 			</div>
 		</div>
-	</div>
-</section>
 
