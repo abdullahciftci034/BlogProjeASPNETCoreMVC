@@ -2,20 +2,23 @@
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoreDemo.Controllers
 {
-    public class BlogController : Controller
+	[AllowAnonymous]
+	public class BlogController : Controller
     {
 		IBlogService blogManager = new BlogManager(new EfBlogRepostory());
 		
 		public IActionResult Index()
         {
-            var values = blogManager.GetBlogListWithCategory();
+            var values = blogManager.GetBlogListWithCategory().TakeLast(9).Reverse().ToList();
             return View(values);
         }
         public IActionResult BlogDetails(int id)
