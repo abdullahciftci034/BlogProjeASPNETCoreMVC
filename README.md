@@ -1,5 +1,5 @@
 # Blog Proje
-Bu projede MVC mimarisi kullanarak, oturum açma, blog yazısı paylaşma, yeni haber blog yazılarında haberdar olma gibi içerikler içeriyor.
+Bu projede MVC mimarisi kullanarak, oturum açma, blog yazısı paylaşma, yeni yazılardan haberdar olma gibi içerikler içeriyor.
 
 ### İçerik
 - [Mvc](#Mvc)
